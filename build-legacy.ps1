@@ -36,6 +36,11 @@ python -m PyInstaller `
 
 if ($LASTEXITCODE -ne 0) { throw "PyInstaller failed" }
 
+# Some bundled dependencies ship macOS Finder metadata that is irrelevant here.
+$distDir = Join-Path $PSScriptRoot "dist\AutoClaudeContinue"
+Get-ChildItem -LiteralPath $distDir -Filter ".DS_Store" -File -Recurse |
+    Remove-Item -Force
+
 # PyInstaller also leaves an executable under build\AutoClaudeContinue\.  That
 # copy is an intermediate artifact and cannot run on its own (its _internal
 # folder is missing), so remove it before anyone launches the wrong file.
