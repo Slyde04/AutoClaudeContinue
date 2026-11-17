@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark light" />
+    <title>AutoClaudeContinue</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app" class="app">
+      <aside class="sidebar">
+        <div class="brand">
+          <img class="brand-logo" src="assets/logo.jpg" alt="" />
+          <div class="brand-copy">
+            <span class="brand-name">AutoClaude</span>
+            <span class="brand-sub">Continue</span>
+          </div>
+        </div>
+
+        <nav class="nav" aria-label="Pages">
+          <button type="button" class="nav-item is-active" data-page="home">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 10.8 12 3l9 7.8V21a1 1 0 0 1-1 1h-5.4v-6.4H9.4V22H4a1 1 0 0 1-1-1Z" />
+            </svg>
+            <span>Home</span>
+          </button>
+          <button type="button" class="nav-item" data-page="settings">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 6h10M18 6h2M4 12h2M10 12h10M4 18h10M18 18h2" />
+              <circle cx="16" cy="6" r="2" />
+              <circle cx="8" cy="12" r="2" />
+              <circle cx="16" cy="18" r="2" />
+            </svg>
+            <span>Settings</span>
+          </button>
+          <button type="button" class="nav-item" data-page="misc">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 11v6M12 7.2v.2" />
+            </svg>
+            <span>Misc</span>
+          </button>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="sidebar-state">
+            <span id="sidebar-dot" class="dot dot-green"></span>
+            <span id="sidebar-status">Starting…</span>
+          </div>
+          <div class="sidebar-version"><span id="version-label">v1.2.0</span> &middot; by KutaOS</div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="page-header">
+          <h1 id="page-title">Home</h1>
+          <p id="page-subtitle">Watch for a rate limit, wait it out, then send your message.</p>
+        </header>
+
+        <div class="page-host">
+          <!-- ------------------------------------------------------------------
+               Home
+          ------------------------------------------------------------------- -->
+          <section id="page-home" class="page is-active" aria-labelledby="page-title">
+            <div class="home-scroll" id="home-scroll">
+              <div class="controls">
+                <span class="eyebrow">WATCHING</span>
+                <div class="segmented" id="target-home" role="group" aria-label="Target app">
+                  <button type="button" data-target="claude">Claude</button>
+                  <button type="button" data-target="chatgpt">ChatGPT</button>
+                  <button type="button" data-target="auto">Automatic</button>
+                </div>
+                <div class="controls-spacer"></div>
+                <div class="controls-right">
+                  <button type="button" id="detection-switch" class="switch-label" role="switch" aria-checked="true">
+                    <span class="switch"><span class="switch-knob"></span></span>
+                    <span id="detection-label">Detection on</span>
+                  </button>
+                  <button type="button" id="send-now" class="btn btn-outline">Send now</button>
+                </div>
+              </div>
+
+              <div class="card status-card">
+                <div class="status-left">
+                  <div class="status-pill">
+                    <span id="status-dot" class="dot dot-green"></span>
+                    <span id="status-state">Starting</span>
+                  </div>
+                  <h2 id="status-title">Starting AutoClaudeContinue</h2>
+                  <p id="status-detail">Waking up the automation engine.</p>
+                  <div class="status-meta">
+                    <span id="status-app">AutoClaudeContinue</span>
+                    <span class="meta-sep">&middot;</span>
+                    <span id="status-reset">No reset scheduled</span>
+                  </div>
+                </div>
+                <div class="status-right">
+                  <span class="eyebrow">RATE-LIMIT TIMER</span>
+                  <span id="countdown" class="countdown">—</span>
+                  <span id="countdown-caption" class="countdown-caption">no active limit</span>
+                </div>
+              </div>
+
+              <div class="work-grid">
+                <div class="card message-card">
+                  <div class="card-head inline-head">
+                    <div>
+                      <h2>Message</h2>
+                      <p>Sent when the limit clears</p>
+                    </div>
+                    <select id="preset-select" class="select compact" aria-label="Saved presets">
+                      <option value="">Presets</option>
+                    </select>
+                  </div>
+                  <div class="composer-wrap">
+                    <textarea id="message-box" class="composer" spellcheck="true" aria-label="Message to send">continue</textarea>
+                  </div>
+                  <div class="card-foot">
+                    <span id="message-saved" class="muted-note">Draft saves automatically</span>
+                    <button type="button" id="save-preset" class="btn btn-ghost btn-small">Save as preset</button>
+                  </div>
+                </div>
+
+                <div class="card images-card">
+                  <div class="card-head inline-head">
+                    <div>
+                      <h2>Images</h2>
+                    </div>
+                    <span class="hint">Optional &middot; up to 8</span>
+                  </div>
+                  <div id="images-empty" class="empty-state">
+                    <span class="empty-plus">+</span>
+                    <span class="empty-title">No images attached</span>
+                    <span class="hint">Paste with Ctrl+V, or add files below</span>
+                  </div>
+                  <div id="attachment-list" class="attachment-list" hidden></div>
+                  <div class="card-foot image-foot">
+                    <span id="attachment-hint" class="muted-note">Images are optional.</span>
+                    <div class="foot-actions">
+                      <button type="button" id="paste-images" class="btn btn-soft btn-small">Paste</button>
+                      <button type="button" id="add-images" class="btn btn-outline btn-small">Add images…</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card activity-card">
+                <div class="card-head inline-head activity-head">
+                  <h2>Activity</h2>
+                  <button type="button" id="clear-activity" class="btn btn-ghost btn-tiny">Clear</button>
+                </div>
+                <div id="activity-list" class="activity-list" aria-live="polite">
+                  <div class="activity-empty">Nothing yet. The app will log what it does here.</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ------------------------------------------------------------------
+               Settings
+          ------------------------------------------------------------------- -->
+          <section id="page-settings" class="page" aria-labelledby="page-title">
+            <div class="page-scroll">
+              <p id="settings-status" class="page-note">Changes save automatically</p>
+
+              <div class="card section-card">
+                <div class="card-head">
+                  <h2>Automation</h2>
+                  <p>Choose what to watch and how often.</p>
+                </div>
+                <div class="card-body">
+                  <div class="setting-row">
+                    <div class="setting-copy">
+                      <span class="setting-label">Target app</span>
+                      <span class="setting-hint">Claude, ChatGPT, or whichever one shows a limit.</span>
+                    </div>
+                    <div class="setting-control">
+                      <div class="segmented" id="target-settings" role="group" aria-label="Target app">
+                        <button type="button" data-target="claude">Claude</button>
+                        <button type="button" data-target="chatgpt">ChatGPT</button>
+                        <button type="button" data-target="auto">Automatic</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="setting-row">
+                    <div class="setting-copy">
+                      <span class="setting-label">Chat</span>
+                      <span id="chat-hint" class="setting-hint">Use the currently open chat.</span>
+                    </div>
+                    <div class="setting-control chat-control">
+                      <select id="chat-select" class="select chat-select" aria-label="Chat">
+                        <option value="">Current chat</option>
+                      </select>
+                      <button type="button" id="refresh-chats" class="btn btn-outline btn-small">Refresh</button>
+                    </div>
+                  </div>
+
+                  <div class="setting-row">
+                    <div class="setting-copy">
+                      <span class="setting-label">Check interval</span>
+                      <span class="setting-hint">How often to read the app when no limit is active. Default 15 minutes.</span>
+                    </div>
+                    <div class="setting-control unit-control">
+                      <input id="interval-input" class="text-input" type="number" min="1" max="1440" step="1" value="15" />
+                      <span class="unit">min</span>
+                    </div>
+                  </div>
+
+                  <div class="setting-row">
+                    <div class="setting-copy">
+                      <span class="setting-label">Claude developer mode</span>
+                      <span class="setting-hint">Send one probe after launch, because developer-mode limits appear only after sending.</span>
+                    </div>
+                    <div class="setting-control">
+                      <button type="button" id="dev-mode-switch" class="switch" role="switch" aria-checked="true" aria-label="Claude developer mode">
+                        <span class="switch-knob"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card section-card">
+                <div class="card-head">
+                  <h2>Windows</h2>
+                  <p>Startup, tray, and launch behavior.</p>
+                </div>
+                <div class="card-body">
+                  <div class="setting-row">
+                    <div class="setting-copy">
+                      <span class="setting-label">Start with Windows</span>
+                      <span class="setting-hint">Launches the app when you sign in.</span>
+                    </div>
+                    <div class="setting-control">
+                      <button type="button" id="startup-switch" class="switch" role="switch" aria-checked="false" aria-label="Start with Windows">
+                        <span class="switch-knob"></span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="setting-row">
+                    <div class="setting-copy">
+                      <span class="setting-label">Minimize to tray</span>
+                      <span class="setting-hint">Closing the window leaves the app running in the tray.</span>
+                    </div>
+                    <div class="setting-control">
+                      <button type="button" id="tray-switch" class="switch" role="switch" aria-checked="true" aria-label="Minimize to tray">
+                        <span class="switch-knob"></span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="setting-row">
+                    <div class="setting-copy">
+                      <span class="setting-label">Launch if missing</span>
+                      <span class="setting-hint">Only at send time, never while polling.</span>
+                    </div>
+                    <div class="setting-control">
+                      <button type="button" id="launch-switch" class="switch" role="switch" aria-checked="false" aria-label="Launch if missing">
+                        <span class="switch-knob"></span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="setting-row">
+                    <div class="setting-copy">
+                      <span class="setting-label">Wake early</span>
+                      <span class="setting-hint">Seconds before the reset to check the app.</span>
+                    </div>
+                    <div class="setting-control unit-control">
+                      <input id="wake-input" class="text-input" type="number" min="0" max="300" step="1" value="10" />
+                      <span class="unit">sec</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card section-card">
+                <div class="card-head">
+                  <h2>Safety</h2>
+                  <p>Keep the app from interrupting you or taking over the keyboard.</p>
+                </div>
+                <div class="card-body">
+                  <div class="setting-row">
+                    <div class="setting-copy">
+                      <span class="setting-label">Preserve drafts</span>
+                      <span class="setting-hint">Put your unsent composer text back after attaching images.</span>
+                    </div>
+                    <div class="setting-control">
+                      <button type="button" id="drafts-switch" class="switch" role="switch" aria-checked="true" aria-label="Preserve drafts">
+                        <span class="switch-knob"></span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="setting-row">
+                    <div class="setting-copy">
+                      <span class="setting-label">Wait while I&rsquo;m using the PC</span>
+                      <span class="setting-hint">Do not take focus until the keyboard and mouse have been idle.</span>
+                    </div>
+                    <div class="setting-control">
+                      <button type="button" id="active-switch" class="switch" role="switch" aria-checked="true" aria-label="Wait while I am using the PC">
+                        <span class="switch-knob"></span>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="setting-row">
+                    <div class="setting-copy">
+                      <span class="setting-label">Idle grace</span>
+                      <span class="setting-hint">How long the PC must be idle before the app may take focus. Default 20 seconds.</span>
+                    </div>
+                    <div class="setting-control unit-control">
+                      <input id="grace-input" class="text-input" type="number" min="0" max="3600" step="1" value="20" />
+                      <span class="unit">sec</span>
+                    </div>
+                  </div>
+
+                  <div class="setting-row">
+                    <div class="setting-copy">
+                      <span class="setting-label">Pause while locked</span>
+                      <span class="setting-hint">Never send while the Windows session is locked.</span>
+                    </div>
+                    <div class="setting-control">
+                      <button type="button" id="locked-switch" class="switch" role="switch" aria-checked="true" aria-label="Pause while locked">
+                        <span class="switch-knob"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card section-card last-card">
+                <div class="card-head">
+                  <h2>Appearance</h2>
+                  <p>Pick the palette that is easiest on your eyes.</p>
+                </div>
+                <div class="card-body">
+                  <div class="setting-row">
+                    <div class="setting-copy">
+                      <span class="setting-label">Interface scale</span>
+                      <span class="setting-hint">Make text and controls larger or smaller. The window still fits your screen.</span>
+                    </div>
+                    <div class="setting-control">
+                      <div class="segmented scale-segmented" id="scale-segmented" role="group" aria-label="Interface scale">
+                        <button type="button" data-scale="90">90%</button>
+                        <button type="button" data-scale="100">100%</button>
+                        <button type="button" data-scale="110">110%</button>
+                        <button type="button" data-scale="125">125%</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="setting-row">
+                    <div class="setting-copy">
+                      <span class="setting-label">Light theme</span>
+                      <span class="setting-hint">Use a bright background. The app keeps your choice after restart.</span>
+                    </div>
+                    <div class="setting-control">
+                      <button type="button" id="light-switch" class="switch" role="switch" aria-checked="false" aria-label="Light theme">
+                        <span class="switch-knob"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ------------------------------------------------------------------
+               Misc
+          ------------------------------------------------------------------- -->
+          <section id="page-misc" class="page" aria-labelledby="page-title">
+            <div class="page-scroll">
+              <div class="card creator-card">
+                <img class="creator-logo" src="assets/logo.jpg" alt="" />
+                <div class="creator-copy">
+                  <h2>KutaOS</h2>
+                  <span class="creator-role">Creator</span>
+                  <p>Tools for people who would rather keep building than babysit a rate limit.</p>
+                </div>
+              </div>
+
+              <div class="card section-card">
+                <div class="card-head">
+                  <h2>Links</h2>
+                  <p>Find the creator and say hello.</p>
+                </div>
+                <div class="card-body link-body">
+                  <button type="button" class="link-row" data-url="https://www.youtube.com/@Thekutamc">
+                    <img src="assets/youtube.png" alt="" />
+                    <span class="link-copy">
+                      <span class="link-title">YouTube</span>
+                      <span class="link-sub">@Thekutamc</span>
+                    </span>
+                    <span class="link-arrow">↗</span>
+                  </button>
+                  <button type="button" class="link-row" data-url="https://discord.gg/VgqfppxR7G">
+                    <img src="assets/discord.png" alt="" />
+                    <span class="link-copy">
+                      <span class="link-title">Discord</span>
+                      <span class="link-sub">discord.gg/VgqfppxR7G</span>
+                    </span>
+                    <span class="link-arrow">↗</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="card section-card">
+                <div class="card-head">
+                  <h2>License</h2>
+                  <p>Noncommercial use, modification, and redistribution with attribution.</p>
+                </div>
+                <div class="card-body">
+                  <div class="license-summary">
+                    <p>You may use, modify, and share AutoClaudeContinue for noncommercial purposes with attribution. Commercial use is not allowed.</p>
+                    <span>Noncommercial Source-Available License &middot; Version 1.0</span>
+                  </div>
+                  <button type="button" id="read-license" class="btn btn-soft btn-small">Read license</button>
+                </div>
+              </div>
+
+              <div class="card section-card last-card">
+                <div class="card-head">
+                  <h2>App files</h2>
+                </div>
+                <div class="card-body files-body">
+                  <button type="button" class="btn btn-outline btn-small" data-open="data">Open data folder</button>
+                  <button type="button" class="btn btn-ghost btn-small" data-open="log">Open activity log</button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <dialog id="license-dialog" class="license-dialog">
+      <div class="license-head">
+        <div>
+          <h2>License Agreement</h2>
+          <p id="license-subtitle">AutoClaudeContinue &middot; KutaOS</p>
+        </div>
+      </div>
+      <pre id="license-body" class="license-body" tabindex="0"></pre>
+      <div class="license-foot">
+        <span>© 2026 KutaOS. All rights reserved.</span>
+        <button type="button" id="license-close" class="btn btn-primary btn-small">Close</button>
+      </div>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

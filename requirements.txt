@@ -1,0 +1,5 @@
+uiautomation>=2.0.29
+comtypes>=1.4.17
+pystray>=0.19.5
+Pillow>=10.0.0
+customtkinter>=5.2.2
