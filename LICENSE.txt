@@ -1,45 +1,151 @@
-AutoClaudeContinue Noncommercial Source-Available License
-Version 1.0
+AutoClaudeContinue — End User License Agreement (EULA)
+Version 1.0  ·  Last updated: 15 November 2026
 
-Copyright (c) 2026 KutaOS. All rights reserved.
+Copyright © 2026 KutaOS. All rights reserved.
 
-Permission is granted to any person obtaining a copy of this software and
-associated documentation (the "Software") to use, reproduce, modify, and
-redistribute the Software, in source or binary form, solely for
-Noncommercial Purposes, subject to the conditions below.
+This is a legal agreement between you ("you" or "Licensee") and KutaOS
+("KutaOS", "we", "us", or "our") for the software product AutoClaudeContinue,
+including its executable, installer, source code, documentation, images,
+fonts, and any updates (together, the "Software").
 
-1. Attribution
+BY INSTALLING, COPYING, OR USING THE SOFTWARE, YOU AGREE TO BE BOUND BY THIS
+AGREEMENT. IF YOU DO NOT AGREE, DO NOT INSTALL OR USE THE SOFTWARE, AND DELETE
+ALL COPIES IN YOUR POSSESSION.
 
-You must include this license and the above copyright notice with every copy
-or substantial portion of the Software that you distribute. If you modify the
-Software, you must clearly identify your changes and must not imply that your
-modified version is the original or is endorsed by KutaOS.
+PLAIN-ENGLISH SUMMARY
+This summary is for convenience only. It does not change the legal terms below.
+- AutoClaudeContinue is proprietary software. It is licensed, not sold.
+- You may install and use it yourself, on computers you own or control.
+- You may not copy, share, upload, publish, resell, rent, bundle, or otherwise
+  distribute it to anyone else, in whole or in part.
+- You may not modify, reverse engineer, repackage, or reuse its code, design,
+  or assets to make another product.
+- KutaOS remains the owner. If you break these rules, your license ends.
+- The Software is provided "as is", with no warranty.
 
-2. Noncommercial use only
+1. GRANT OF LICENSE
+Subject to your compliance with this Agreement, KutaOS grants you a limited,
+personal, non-exclusive, non-transferable, non-sublicensable, and revocable
+license to install and use one copy of the Software on computers that you own
+or control, solely for your own personal use. You may make one backup copy for
+your own archival purposes, provided that the backup contains all copyright and
+proprietary notices and is not made available to anyone else.
 
-"Noncommercial Purpose" means a purpose not primarily intended for or directed
-toward commercial advantage or monetary compensation. You may not sell,
-license for a fee, or use the Software in a product or service offered for
-commercial advantage or monetary compensation. You may not remove or obscure
-copyright or license notices, or claim authorship of the Software.
+Organizations, companies, and other groups do not receive any right under this
+Agreement to deploy, install, or make the Software available to multiple users
+or devices. Such use requires a separate written license from KutaOS.
 
-3. Third-party materials
+2. RESTRICTIONS
+You may not, and may not permit or assist anyone else to:
+(a) copy, reproduce, distribute, publish, post, upload, share, transmit,
+    mirror, or otherwise make the Software available, in whole or in part, to
+    any third party, including through file-sharing services, download links,
+    software repositories, package managers, social media, messaging services,
+    or by bundling it with another product;
+(b) sell, resell, license, sublicense, rent, lease, lend, assign, or otherwise
+    transfer the Software or any right granted under this Agreement;
+(c) provide the Software, or any functionality of it, as a service, hosted
+    service, or service bureau to any third party;
+(d) modify, adapt, translate, or create derivative works of the Software;
+(e) reverse engineer, decompile, disassemble, or otherwise attempt to derive
+    the source code, underlying ideas, algorithms, file formats, or trade
+    secrets of the Software, except to the extent that applicable law expressly
+    prohibits this restriction;
+(f) remove, alter, obscure, or circumvent any copyright, trademark, license,
+    or proprietary notice, or any technical protection or usage restriction;
+(g) use the Software, including its code, design, assets, or documentation, to
+    develop, train, or improve a competing product or any other product;
+(h) use the Software in violation of applicable law or in a way that breaches
+    the terms of any third-party service it interacts with.
 
-Components and assets identified as third-party materials are governed by
-their own licenses. Those licenses take precedence for those materials.
+Unauthorized copying or distribution of the Software is also a violation of
+copyright law and may result in civil and criminal penalties.
 
-4. Termination
+3. OWNERSHIP
+The Software is licensed, not sold. KutaOS and its licensors retain all right,
+title, and interest in and to the Software, including all intellectual property
+rights. All rights not expressly granted in this Agreement are reserved. No
+title to or ownership of the Software is transferred to you.
 
-Your rights under this license terminate automatically if you fail to comply
-with its terms. Upon termination, you must stop using and distributing the
-Software.
+4. THIRD-PARTY COMPONENTS AND SERVICES
+The Software includes third-party open-source components. Those components
+remain governed by their own licenses, which take precedence over this
+Agreement for those components. AutoClaudeContinue is not affiliated with,
+endorsed by, or sponsored by Anthropic (Claude) or OpenAI (ChatGPT). Your use
+of those services is governed by your own agreements with them.
 
-5. Disclaimer
+5. UPDATES AND SUPPORT
+KutaOS may, but is not obligated to, provide updates. Unless a separate license
+accompanies an update, updates are part of the Software and are subject to this
+Agreement. KutaOS may discontinue the Software or support for any version at
+any time.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+6. TERM AND TERMINATION
+This Agreement is effective until terminated. Your rights under it terminate
+automatically, without notice, if you breach any term. KutaOS may also
+terminate this Agreement if it discontinues the Software. On termination, you
+must stop using the Software and delete all copies in your possession or
+control. Sections 2, 3, 4, 7, 8, 9, 10, 11, and 12 survive termination.
+
+7. YOUR RESPONSIBILITIES
+You are solely responsible for the messages, images, and other content you
+configure or send through the Software, for any accounts you use with it, and
+for complying with all applicable laws and third-party terms. You are also
+responsible for keeping your own backups and for reviewing messages before they
+are sent. The Software does not grant you any rights to Claude, ChatGPT, or any
+other third-party service.
+
+8. DISCLAIMER OF WARRANTY
+THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE", WITH ALL FAULTS AND
+WITHOUT WARRANTY OF ANY KIND. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE
+LAW, KUTAOS EXPRESSLY DISCLAIMS ALL WARRANTIES, WHETHER EXPRESS, IMPLIED,
+STATUTORY, OR OTHERWISE, INCLUDING ANY IMPLIED WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE, TITLE, QUIET ENJOYMENT, AND NON-INFRINGEMENT.
+KUTAOS DOES NOT WARRANT THAT THE SOFTWARE WILL BE UNINTERRUPTED, ERROR-FREE, OR
+SECURE, THAT IT WILL WORK WITH ANY PARTICULAR VERSION OF CLAUDE, CHATGPT,
+WINDOWS, OR OTHER SOFTWARE, OR THAT DEFECTS WILL BE CORRECTED. YOU USE THE
+SOFTWARE AT YOUR OWN RISK.
+
+9. LIMITATION OF LIABILITY
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL KUTAOS BE
+LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR
+PUNITIVE DAMAGES, OR FOR ANY LOSS OF PROFITS, REVENUE, DATA, GOODWILL, OR
+BUSINESS OPPORTUNITY, ARISING OUT OF OR RELATING TO THE SOFTWARE OR THIS
+AGREEMENT, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. KUTAOS'S TOTAL
+AGGREGATE LIABILITY ARISING OUT OF OR RELATING TO THE SOFTWARE OR THIS
+AGREEMENT WILL NOT EXCEED THE GREATER OF (A) THE AMOUNT YOU PAID FOR THE
+SOFTWARE IN THE TWELVE MONTHS BEFORE THE CLAIM OR (B) USD 10. Some jurisdictions
+do not allow the exclusion or limitation of certain damages, so some of the
+above may not apply to you.
+
+10. INDEMNITY
+You agree to indemnify, defend, and hold harmless KutaOS from and against any
+claims, damages, liabilities, costs, and expenses (including reasonable legal
+fees) arising out of or relating to your use of the Software, your breach of
+this Agreement, or your violation of any law or third-party right.
+
+11. GOVERNING LAW AND DISPUTES
+This Agreement is governed by the laws of the country in which the copyright
+holder resides, without regard to conflict-of-law rules. The courts located in
+that country will have exclusive jurisdiction over disputes arising out of or
+relating to this Agreement, except that KutaOS may seek injunctive or other
+equitable relief in any court of competent jurisdiction to protect its
+intellectual property. The United Nations Convention on Contracts for the
+International Sale of Goods does not apply.
+
+12. GENERAL
+This Agreement is the entire agreement between you and KutaOS concerning the
+Software and supersedes any prior or contemporaneous discussions on that
+subject. It may be amended only in a written document signed by KutaOS. No
+failure or delay in exercising a right is a waiver of that right. If any
+provision is held unenforceable, the remaining provisions will continue in
+full force. You may not assign or transfer this Agreement or any rights under
+it. KutaOS may assign this Agreement. Nothing in this Agreement limits any
+mandatory rights you may have under applicable consumer law.
+
+13. CONTACT
+KutaOS
+YouTube: https://www.youtube.com/@Thekutamc
+Discord: https://discord.gg/VgqfppxR7G
+
+Thank you for respecting the work that went into this app.

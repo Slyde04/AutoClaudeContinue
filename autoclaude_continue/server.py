@@ -45,12 +45,14 @@ MAX_BODY_BYTES = 2 * 1024 * 1024
 ACTIVITY_LIMIT = 120
 
 LICENSE_FALLBACK = (
-    "AutoClaudeContinue Noncommercial Source-Available License\n\n"
+    "AutoClaudeContinue — End User License Agreement\n\n"
     "The license text could not be loaded from this installation.\n\n"
-    "You may use, modify, and redistribute AutoClaudeContinue for "
-    "noncommercial purposes with attribution. Commercial use is not allowed. "
-    'The Software is provided "as is", without warranty.\n\n'
-    "Third-party materials are governed by their own licenses.\n"
+    "AutoClaudeContinue is proprietary software owned by KutaOS. You may use "
+    "it yourself, but you may not copy, share, publish, resell, or bundle it, "
+    "or reuse its code, design, or assets in another product. The Software is "
+    'provided "as is", without warranty.\n\n'
+    "Contact KutaOS on Discord for a copy of the full agreement:\n"
+    "https://discord.gg/VgqfppxR7G\n"
 )
 
 STATE_STARTING = {

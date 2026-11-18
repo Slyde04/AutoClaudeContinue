@@ -13,3 +13,13 @@ src-tauri/binaries/
 AutoClaudeContinue.spec
 @AutomationLog.txt
 .DS_Store
+
+src-tauri/target/
+node_modules/
+dist/
+build/
+__pycache__/
+*.exe
+*.pdb
+*.rlib
+*.rmeta

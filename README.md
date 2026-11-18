@@ -17,11 +17,8 @@ reads and drives the desktop apps through Windows UI Automation.
 
 ## Install
 
-Download the Windows portable ZIP from
-[GitHub Releases](https://github.com/Slyde04/AutoClaudeContinue/releases), then
-extract the entire archive and run `AutoClaudeContinue.exe`. Keep the `_internal`
-folder beside the executable. The portable release uses the legacy
-CustomTkinter interface; it is not an installer.
+Run the installer from the release build, then open **AutoClaudeContinue** from
+the Start menu or the tray.
 
 To run from source:
 
@@ -31,9 +28,9 @@ npm install
 npm run dev
 ```
 
-`npm run dev` starts the Tauri shell and a local Python backend. The
-`pythonw run.pyw` entry point opens the legacy CustomTkinter interface included
-in the portable Windows release.
+`npm run dev` starts the Tauri shell and a local Python backend. The older
+`pythonw run.pyw` entry point still opens the legacy CustomTkinter window, but
+the packaged app uses the Tauri interface.
 
 ## Use
 
@@ -183,9 +180,8 @@ powershell -ExecutionPolicy Bypass -File build-backend.ps1
 npm run build
 ```
 
-The portable Windows release can be rebuilt with `build-legacy.ps1`. It creates
-the executable and its required `_internal` folder under `dist\AutoClaudeContinue`.
-The Tauri build above produces a separate NSIS installer.
+The legacy CustomTkinter window can still be produced with `build-legacy.ps1`;
+it is not part of the Tauri installer.
 
 ## Limitations
 
@@ -201,22 +197,20 @@ The Tauri build above produces a separate NSIS installer.
 
 ## License
 
-AutoClaudeContinue is source-available under the
-[Noncommercial Source-Available License](./LICENSE). You may use, modify, and
-redistribute it for noncommercial purposes with attribution; commercial use is
-not allowed. This is not an OSI-approved open-source license. The license is
-also included in `LICENSE.txt` and can be read inside the app under
-**Misc → License**. The bundled OpenDyslexic fonts are third-party material
-licensed under the SIL Open Font License; see
-[`desktop/assets/OpenDyslexic3-OFL.txt`](./desktop/assets/OpenDyslexic3-OFL.txt).
+AutoClaudeContinue is proprietary software owned by **KutaOS**. It is licensed,
+not sold. You may install and use it for your own personal use, but you may not
+copy, share, upload, publish, resell, rent, or bundle it, or reuse its code,
+design, or assets in another product. The full **End User License Agreement** is
+included in `LICENSE.txt` and can be read inside the app under **Misc →
+License**.
 
 ## Uninstall
 
-1. Quit the app from the tray menu and delete the extracted portable-app folder.
-2. Turn off **Start with Windows** first, or remove the
+1. Quit the app from the tray menu.
+2. Turn off **Start with Windows** before uninstalling, or remove the
    `AutoClaudeContinue` value under
    `HKCU\Software\Microsoft\Windows\CurrentVersion\Run`.
-3. If you installed a Tauri build, uninstall it from Windows Settings. Delete
+3. Uninstall **AutoClaudeContinue** from Windows Settings, then delete
    `%APPDATA%\AutoClaudeContinue` if you also want to remove your settings and
    logs.
 
@@ -240,10 +234,9 @@ desktop/
   index.html                web UI markup
   styles.css                themes, layout, switches, scaling
   app.js                    API client, state rendering, Tauri bindings
-  assets/                   logo, link icons, fonts, and the font's OFL license
+  assets/                   logo, link icons, OpenDyslexic fonts
 version_info.txt            Windows file/version metadata
-LICENSE                     Noncommercial source-available license
-LICENSE.txt                 License text displayed by the app
+LICENSE.txt                 End User License Agreement
 autoclaude_continue/
   server.py                 local JSON/SSE API and backend entry point
   automator.py              quiet detect/wait/send state machine

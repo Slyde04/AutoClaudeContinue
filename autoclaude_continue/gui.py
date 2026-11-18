@@ -115,12 +115,14 @@ PAGE_META = {
 }
 
 LICENSE_FALLBACK = (
-    "AutoClaudeContinue Noncommercial Source-Available License\n\n"
+    "AutoClaudeContinue — End User License Agreement\n\n"
     "The license text could not be loaded from this installation.\n\n"
-    "You may use, modify, and redistribute AutoClaudeContinue for "
-    "noncommercial purposes with attribution. Commercial use is not allowed. "
-    'The Software is provided "as is", without warranty.\n\n'
-    "Third-party materials are governed by their own licenses.\n"
+    "AutoClaudeContinue is proprietary software owned by KutaOS. You may use "
+    "it yourself, but you may not copy, share, publish, resell, or bundle it, "
+    "or reuse its code, design, or assets in another product. The Software is "
+    'provided "as is", without warranty.\n\n'
+    "Contact KutaOS on Discord for a copy of the full agreement:\n"
+    "https://discord.gg/VgqfppxR7G\n"
 )
 
 
@@ -1299,7 +1301,7 @@ class App:
         license_card, license_body = self._section(
             scroll,
             "License",
-            "Free noncommercial use, modification, and redistribution with attribution.",
+            "Proprietary software. Personal use only — no redistribution.",
         )
         license_card.grid(row=2, column=0, sticky="ew", pady=(0, 14), padx=2)
 
@@ -1313,9 +1315,10 @@ class App:
         ctk.CTkLabel(
             license_summary,
             text=(
-                "You may use, modify, and share AutoClaudeContinue for "
-                "noncommercial purposes with attribution. Commercial use is "
-                "not allowed."
+                "AutoClaudeContinue is licensed, not sold. You may use it "
+                "yourself, but you may not copy, share, publish, resell, or "
+                "bundle it — or reuse its code, design, or assets in another "
+                "product."
             ),
             font=self.font_body,
             text_color=TEXT,
@@ -1325,7 +1328,7 @@ class App:
         ).grid(row=0, column=0, sticky="w", padx=16, pady=(14, 4))
         ctk.CTkLabel(
             license_summary,
-            text="Noncommercial Source-Available License  ·  Version 1.0",
+            text="End User License Agreement  ·  Version 1.0",
             font=self.font_small,
             text_color=FAINT,
             anchor="w",
